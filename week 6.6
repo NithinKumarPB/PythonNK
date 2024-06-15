@@ -1,0 +1,29 @@
+def find_pivot_index(arr):
+    # Calculate total sum of array
+    total_sum = sum(arr)
+    left_sum = 0
+    
+    # Iterate through the array
+    for i, num in enumerate(arr):
+        # Subtract current element from total sum
+        total_sum -= num
+        
+        # If left sum equals total sum, return the index
+        if left_sum == total_sum:
+            return i
+        
+        # Update left sum for next iteration
+        left_sum += num
+    
+    # If pivot index is not found (which is guaranteed to exist), return -1
+    return -1
+
+# Input
+n = int(input())
+arr = [int(input()) for _ in range(n)]
+
+# Find the pivot index
+pivot_index = find_pivot_index(arr)
+
+# Output
+print(pivot_index)
