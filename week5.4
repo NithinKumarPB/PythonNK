@@ -1,0 +1,17 @@
+def common_characters(S1, S2, N):
+    common_chars = []
+    for char in S1:
+        if char in S2 and char not in common_chars:
+            common_chars.append(char)
+            if len(common_chars) == N:
+                break
+    return ''.join(common_chars)
+
+# Input
+S1 = input().strip()
+S2 = input().strip()
+N = int(input().strip())
+
+# Function call
+result = common_characters(S1, S2, N)
+print(result)
